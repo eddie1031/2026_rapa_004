@@ -8,8 +8,6 @@ public class Bootstrapping1 {
         EntityManagerFactory emf =
                 Persistence.createEntityManagerFactory("hibernate-exp-1");
 
-
-
     }
 
 }
