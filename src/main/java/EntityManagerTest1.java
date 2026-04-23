@@ -4,7 +4,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import model.s02.Post;
 
-public class EntityManagerTest {
+public class EntityManagerTest1 {
 
     private static final EntityManagerFactory emf;
 
@@ -31,11 +31,16 @@ public class EntityManagerTest {
             // Managed -> Insert Into
             em.persist(post);
 
+            tx.commit();
 
         } catch ( Exception e ) {
-
+            e.printStackTrace();
+            tx.rollback();
+        } finally {
+            em.close();
         }
 
+        emf.close();
 
 
     }
