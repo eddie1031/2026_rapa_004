@@ -1,4 +1,4 @@
-package model;
+package model.cpt;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -28,4 +28,5 @@ public class EntityObjectMapping {
     public void setName(String name) {
         this.name = name;
     }
+
 }
