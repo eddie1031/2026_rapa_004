@@ -63,6 +63,28 @@ public class AssociationTests {
         }
 
 
+        EntityManager em3 = emf.createEntityManager();
+        EntityTransaction tx3 = em3.getTransaction();
+
+
+        try {
+
+            tx3.begin();
+
+            Order order = em3.find(Order.class, orderId);
+            System.out.println("주문 ID = " + order.getId());
+            System.out.println("주문한 회원 이름 = " + order.getMember().getName());
+
+            tx3.commit();
+
+        } catch ( Exception e ) {
+            tx3.rollback();
+            throw new RuntimeException(e);
+        } finally {
+            em3.close();
+        }
+
+        emf.close();
 
     }
 
