@@ -115,4 +115,15 @@ public class Member {
         this.lastLoginAt = lastLoginAt;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public LocalDateTime getSignupAt() {
+        return signupAt;
+    }
 }
