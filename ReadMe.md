@@ -6,9 +6,9 @@
 4. N:M -> `@ManyToMany`
 
 ## 쇼핑몰
-- [ ] Member
+- [x] Member
   - [x] Address
-- [X] Product
-  - [X] Category
-- [ ] Order
-  - [ ] OrderItem 
+- [x] Product
+  - [x] Category
+- [x] Order
+  - [x] OrderItem 

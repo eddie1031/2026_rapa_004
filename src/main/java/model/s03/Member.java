@@ -3,6 +3,8 @@ package model.s03;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "members")
@@ -30,6 +32,9 @@ public class Member {
         orphanRemoval = true
     )
     private Address address;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orderList = new ArrayList<>();
 
     private LocalDateTime signupAt = LocalDateTime.now();
 
@@ -60,6 +65,11 @@ public class Member {
             address.setMember(this);
         }
 
+    }
+
+    public void addOrder(Order order) {
+        this.orderList.add(order);
+        order.setMember(this);
     }
 
     /*
