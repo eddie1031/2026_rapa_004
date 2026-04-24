@@ -38,6 +38,11 @@ public class Order {
         this.orderStatus = OrderStatus.ORDERED;
     }
 
+    public void addOrderItem(OrderItem oi) {
+        this.items.add(oi);
+        oi.setOrder(this);
+    }
+
     /*
     Getter and Setter
      */
